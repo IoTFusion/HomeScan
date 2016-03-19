@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="App4.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App4"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBox VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,40,10,0" PlaceholderText="Username"></TextBox>
+        <PasswordBox VerticalAlignment="Top" HorizontalAlignment="Stretch" PlaceholderText="Password" Margin="10,100,10,0"></PasswordBox>
+        <Button x:Name="Loginbutton" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,20" Content="Login" Click="Loginbutton_Click"></Button>
+    </Grid>
+</Page>

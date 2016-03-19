@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="App4.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App4"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <PivotItem x:Name="turnedon" Header="Turned on" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,23,0,-0.5">
+                <ListView x:Name="JustOn" ItemsSource="{Binding ONList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="10,0,0,0" x:Name="ISON" Text="{Binding Device}"></TextBlock>
+                        </DataTemplate>
+                        </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Name="all" Header="Analytics" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,23,0,-0.5">
+                <Grid>
+                    <Grid IsTapEnabled="True" Tapped="Grid_Tapped">
+                <TextBlock x:Name="Full" FontSize="18" Text="Full usage:" Margin="10,0,0,0"></TextBlock>
+                    </Grid>
+                    <TextBlock x:Name="FullNumber" FontSize="18" Margin="0,0,30,0" HorizontalAlignment="Right"></TextBlock>
+                    <ListView IsItemClickEnabled="True" ItemClick="FullList_ItemClick" x:Name="FullList" ItemsSource="{Binding AllList}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,40,0,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="itemgrid" HorizontalAlignment="Stretch">
+                                    <TextBlock x:Name="DevName" FontSize="16" HorizontalAlignment="Left" Margin="10,0,0,0" Text="{Binding Device}"></TextBlock>
+                                    <TextBlock x:Name="Devstat" FontSize="16" HorizontalAlignment="Left" Margin="150,0,0,0" Text="{Binding Status}"></TextBlock>
+                                    <TextBlock x:Name="Use" FontSize="16" HorizontalAlignment="Right" Text="{Binding Usage}" Margin="300,0,0,0"></TextBlock>
+                        </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+</Page>
